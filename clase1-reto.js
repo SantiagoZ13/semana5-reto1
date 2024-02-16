@@ -1,16 +1,16 @@
 class Estudiante{
-    nombre
-    apellido
-    calificaciones
+    #nombre
+    #apellido
+    #calificaciones
     constructor(nombre, apellido, calificaciones){
-        this.nombre = nombre
-        this.apellido = apellido
-        this.calificaciones = calificaciones
+        this.#nombre = nombre
+        this.#apellido = apellido
+        this.#calificaciones = calificaciones
     }
-    nombreCompleto(){
-        return `NOMBRE COMPLETO: ${this.nombre} ${this.apellido}`
+    get nombreCompleto(){
+        return `NOMBRE COMPLETO: ${this.#nombre} ${this.#apellido}`
     }
-    calcularPromedio(ratings = this.calificaciones){
+    calcularPromedio(ratings = this.#calificaciones){
         let total = 0
         let promedio;
         for(const rating of ratings){
@@ -22,7 +22,7 @@ class Estudiante{
     static listaEstudiantes(estudiantes){
         let index = 1
         for(const estudiante of estudiantes){
-            console.log(` ${index}. ${estudiante.nombreCompleto()} PROMEDIO: ${estudiante.calcularPromedio()}`)
+            console.log(` ${index}. ${estudiante.nombreCompleto} PROMEDIO: ${estudiante.calcularPromedio()}`)
             index++
         }
     }

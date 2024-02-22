@@ -1,3 +1,6 @@
+/*Calbackhell. para que se ejecute una detras de otra,
+osea una tiene que ejecutarse para seguir con la otra.
+*/
 let ONE_SEC_IN_MS = 1000
 
 function cook(ingredient, callback, time){
@@ -8,11 +11,6 @@ function cook(ingredient, callback, time){
 
 let make = cook
 
-cook("Arroz", console.log, 10)
-cook("Huevo", console.log, 2)
-make("Mesa", console.log, 1)
-
-//Calbackhell. para que se ejecute una solo cuando se ejecuto otra
 cook("Arroz", function(ingredient){
     console.log(ingredient)
     cook("Huevo", function(ingredient){
@@ -20,4 +18,3 @@ cook("Arroz", function(ingredient){
         make("Mesa", console.log, 1)
     }, 2)
 }, 10)
-

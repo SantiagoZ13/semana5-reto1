@@ -6,7 +6,9 @@ function slowSquare(number){
         }, 2000)
     })
 }
-
+ 
+/* Ayuda a ver y editar de una manera más comoda 
+   Los callback hell*/
 async function main(){
     const resultado = await slowSquare(2)
     const resultado2 = await slowSquare(resultado)

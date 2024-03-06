@@ -58,6 +58,8 @@ Increment2(0).then(Increment2).then(Increment2)
 
 
 //Manera 3 
+
+
 function Increment3 (i){
     return new Promise(function(resolve){
         const result = i + 1
@@ -68,6 +70,8 @@ function Increment3 (i){
         
     })
 }
+
+/*
 async function main(){
     let rst1 = await Increment3(0)
     let rst2 = await Increment3(rst1)
@@ -82,3 +86,12 @@ async function main(){
     
 }
 main()
+*/
+
+// Solution
+const ONE_SEC_IN_MS = 1000
+
+for(let i = 1; i<=10; i++){
+    function print(){ console.log(i) }
+    setTimeout(print, ONE_SEC_IN_MS * i)
+}
